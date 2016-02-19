@@ -8,6 +8,7 @@ public class TestShape{
 		Circle circle = new Circle(13);
 		circle.setRadius(20); //changed my mind about the radius
 
+		// polymorphic list
 		shapes.add(circle);
 		Rectangle rectangle = new Rectangle(12,30);
 		shapes.add(rectangle);
@@ -34,7 +35,7 @@ abstract class Shape{
 }
 
 
-class Rectangle extends Shape{
+class Rectangle extends Shape{	// inheritance, Rectange IS-A Shape
 	private double width;
 	private double height;
 
@@ -44,16 +45,19 @@ class Rectangle extends Shape{
 		this.height = height;
 	}
 
+    public double getArea() { return (width * height); }
+
+    // setters and getters for ensuring encapsulation (protecting private data)
     public void setWidth(double w) { if(w > 0) width = w; }
 	public void setHeight(double h) { if(h > 0) height = h; }
 	public double getWidth() { return this.width; }
 	public double getHeight() { return this.height; }
-	public double getArea() { return (width * height); }
+	
 
 }
 
 
-class Circle extends Shape{
+class Circle extends Shape{	  // inheritance, Circle IS-A Shape
 	private double radius;
 
 	public Circle(double radius){
@@ -61,9 +65,11 @@ class Circle extends Shape{
 		this.radius = radius;
 	}
 
+	public double getArea() { return (radius * radius * 3.14159); }
+
+	// setters and getters for ensuring encapsulation (protecting private data)
 	public void setRadius(double rad){
 		if(rad > 0) radius = rad;
 	}
 	public double getRadius() { return radius; }
-	public double getArea() { return (radius * radius * 3.14159); }
 }

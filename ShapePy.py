@@ -14,12 +14,16 @@ class Shape:
 		return
 
 
-class Rectangle(Shape):
+class Rectangle(Shape):		#inheritance, Rectangle is a subclass of Shape
 	def __init__(self, width, height):
 		self.name = "Rectangle"
 		self.__width = width     #private variable
 		self.__height = height
 
+	def getArea(self):
+		return self.__width * self.__height
+
+	#setters and getters for ensuring encapsulation 
 	def setWidth(self, w): 
 		if w > 0:
 		 self.__width = w	
@@ -29,15 +33,18 @@ class Rectangle(Shape):
 	def getWidth(self):  return self.__width
 	def getHeight(self): return self.__height
 	
-	def getArea(self):
-		return self.__width * self.__height
+	
 
 
-class Circle(Shape):
+class Circle(Shape):       #inheritance, Circle is a subclass of Shape
 	def __init__(self, radius):
 		self.name = "Circle"
 		self.__radius = radius
 
+	def getArea(self):
+		return self.__radius * self.__radius * 3.14159
+
+	#setters and getters for ensuring encapsulation
 	def setRadius(self, rad):
 		if rad > 0:
 			self.__radius = rad
@@ -47,7 +54,7 @@ class Circle(Shape):
 
 
 if __name__ == "__main__":
-	shapes = []
+	shapes = []			# will be a polymorphic list
 	circle = Circle(13)
 	circle.setRadius(20)
 
