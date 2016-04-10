@@ -29,7 +29,7 @@ public class Grid extends ArrayList<ArrayList<Cell>>{
 				    char[] chars = line.toCharArray();
 				    for(int i = 0; i < chars.length; i++){
 				    	boolean alive = (chars[i] == '1') ? true : false;
-				    	row.add(new Cell(alive)); // add only alive cells
+				    	row.add(new Cell(alive));
 				    }
 				    this.add(row);
 				}
